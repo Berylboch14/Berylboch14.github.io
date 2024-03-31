@@ -122,3 +122,6 @@ nav{
 .tab-links.active-link::after{
    width: 50%;
 }
+ .big-text {
+    font-size: 24px; /* Sesuaikan ukuran sesuai kebutuhan Anda */
+  }
