@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to smooth scroll to the top of the target page
     function scrollToPage(targetPage) {
-        const yOffset = -70; 
+        const yOffset = -70; // Adjust this value if needed
         const targetSection = document.querySelector(targetPage);
 
         if (targetSection) {
