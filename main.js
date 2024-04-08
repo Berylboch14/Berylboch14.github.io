@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
             window.scrollTo({top: y, behavior: 'smooth'});
-        });
-    });
 
     // Smooth reveal for header text
     ScrollReveal().reveal(".header-text h1", {
