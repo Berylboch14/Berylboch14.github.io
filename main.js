@@ -17,9 +17,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     // Smooth reveal for header text
-    ScrollReveal().reveal(".header-text", {
+    ScrollReveal().reveal(".header-text h1", {
         distance: "200px",
-        origin: "side",
-        duration: 3000,
+        origin: "right",
+        duration: 1000,
     });
+
+    ScrollReveal().reveal(".header-text h2", {
+        distance: "200px",
+        origin: "right",
+        duration: 1000,
+        delay: 500, // Delay the animation for 500ms
+    });
+
+    
 });
