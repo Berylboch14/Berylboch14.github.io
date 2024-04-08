@@ -1,5 +1,3 @@
-// main.js
-
 document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll("nav ul li a");
 
@@ -19,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Function to smooth scroll to the top of the target page
     function scrollToPage(targetPage) {
-        const yOffset = -70; // Adjust this value if needed
+        const yOffset = -70; 
         const targetSection = document.querySelector(targetPage);
 
         if (targetSection) {
@@ -31,20 +29,16 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+// Smooth reveal for header text using ScrollReveal
+ScrollReveal().reveal(".header-text h1", {
+    distance: "200px",
+    origin: "right",
+    duration: 1000,
+});
 
-    // Smooth reveal for header text
-    ScrollReveal().reveal(".header-text h1", {
-        distance: "200px",
-        origin: "right",
-        duration: 1000,
-    });
-
-    ScrollReveal().reveal(".header-text h2", {
-        distance: "200px",
-        origin: "right",
-        duration: 1000,
-        delay: 500, // Delay the animation for 500ms
-    });
-
-    
+ScrollReveal().reveal(".header-text h2", {
+    distance: "200px",
+    origin: "right",
+    duration: 1000,
+    delay: 500, // Delay the animation for 500ms
 });
