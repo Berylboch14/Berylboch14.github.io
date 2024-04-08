@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Smooth reveal for header text
     ScrollReveal().reveal(".header-text", {
-        distance: "50px",
-        origin: "bottom",
-        duration: 1000,
+        distance: "200px",
+        origin: "side",
+        duration: 3000,
     });
 });
