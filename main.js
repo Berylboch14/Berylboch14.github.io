@@ -2,8 +2,8 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll("nav ul li a");
-    const headerText = document.querySelector(".header-text h1 span");
 
+    // Smooth scroll for navigation links
     navLinks.forEach(link => {
         link.addEventListener("click", function(event) {
             event.preventDefault();
@@ -16,13 +16,10 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    if (headerText) {
-        headerText.addEventListener("click", function() {
-            const yOffset = -70;
-            const targetSection = document.getElementById("about");
-            const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-            window.scrollTo({top: y, behavior: 'smooth'});
-        });
-    }
+    // Smooth reveal for header text
+    ScrollReveal().reveal(".header-text", {
+        distance: "50px",
+        origin: "bottom",
+        duration: 1000,
+    });
 });
