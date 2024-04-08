@@ -7,12 +7,12 @@ document.addEventListener("DOMContentLoaded", function() {
     navLinks.forEach(link => {
         link.addEventListener("click", function(event) {
             event.preventDefault();
-            const targetSectionId = this.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetSectionId);
-            const yOffset = -70;
-            const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            const targetPage = this.getAttribute("href");
+            window.location.href = targetPage;
+        });
+    });
+});
 
-            window.scrollTo({top: y, behavior: 'smooth'});
 
     // Smooth reveal for header text
     ScrollReveal().reveal(".header-text h1", {
