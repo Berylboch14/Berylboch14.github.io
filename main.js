@@ -41,4 +41,4 @@ ScrollReveal().reveal(".header-text h2", {
     origin: "right",
     duration: 1000,
     delay: 500, // Delay the animation for 500ms
-
+});
