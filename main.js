@@ -1,4 +1,5 @@
-// Add JavaScript code here
+// main.js
+
 document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll("nav ul li a");
     const headerText = document.querySelector(".header-text h1 span");
@@ -15,11 +16,13 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    headerText.addEventListener("click", function() {
-        const yOffset = -70;
-        const y = document.getElementById("about").getBoundingClientRect().top + window.pageYOffset + yOffset;
+    if (headerText) {
+        headerText.addEventListener("click", function() {
+            const yOffset = -70;
+            const targetSection = document.getElementById("about");
+            const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-        window.scrollTo({top: y, behavior: 'smooth'});
-    });
+            window.scrollTo({top: y, behavior: 'smooth'});
+        });
+    }
 });
-
