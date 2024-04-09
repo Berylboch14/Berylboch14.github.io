@@ -132,7 +132,8 @@ nav{
 }
 
 .container.contact-info {
-    background-color:#343a40;
+    background-color: #343a40; 
+    color: #fff; 
     border-radius: 10px;
     padding: 20px;
     margin-top: 20px;
@@ -145,7 +146,7 @@ nav{
 }
 
 .container.contact-info h2 {
-    color: #333;
+    color: #fff; 
     font-size: 28px;
     margin-bottom: 15px;
 }
@@ -177,5 +178,7 @@ nav{
 
 .container.contact-info ul li a:hover {
     color: #0056b3;
+}
+
 }
 
