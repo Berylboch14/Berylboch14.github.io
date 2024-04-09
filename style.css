@@ -131,7 +131,7 @@ nav{
     padding: 20px;
 }
 
-.contact-info {
+.container.contact-info {
     background-color: #f8f9fa;
     border-radius: 10px;
     padding: 20px;
@@ -140,41 +140,42 @@ nav{
     transition: transform 0.3s ease;
 }
 
-.contact-info:hover {
+.container.contact-info:hover {
     transform: scale(1.02);
 }
 
-.contact-info h2 {
+.container.contact-info h2 {
     color: #333;
     font-size: 28px;
     margin-bottom: 15px;
 }
 
-.contact-info ul {
+.container.contact-info ul {
     list-style-type: none;
     padding: 0;
 }
 
-.contact-info ul li {
+.container.contact-info ul li {
     margin-bottom: 15px;
     font-size: 16px;
     transition: transform 0.3s ease;
 }
 
-.contact-info ul li:hover {
+.container.contact-info ul li:hover {
     transform: translateX(5px);
 }
 
-.contact-info ul li strong {
+.container.contact-info ul li strong {
     color: #007bff;
 }
 
-.contact-info ul li a {
+.container.contact-info ul li a {
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.contact-info ul li a:hover {
+.container.contact-info ul li a:hover {
     color: #0056b3;
 }
+
