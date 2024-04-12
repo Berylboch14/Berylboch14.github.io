@@ -268,3 +268,54 @@ nav{
     justify-content: space-between;
     flex-wrap: wrap;
 }
+/* Container styles */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Gallery styles */
+#gallery {
+    margin-top: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -10px; /* Adjust according to your spacing preference */
+}
+
+.gallery-item {
+    width: calc(25% - 20px); /* Adjust based on the number of items per row */
+    margin: 10px; /* Adjust the spacing between items */
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Video section styles */
+#video-section {
+    margin-top: 20px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Aspect ratio (16:9) */
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}    
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
