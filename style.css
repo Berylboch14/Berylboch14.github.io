@@ -256,3 +256,6 @@ nav ul li a:hover::after {
     height: 100%;
     object-fit: cover;
 }
+.logo {
+    width: 100px; /
+}
