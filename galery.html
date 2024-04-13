@@ -3,91 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="path/to/baguetteBox.min.css">
+    <style>style.css</style>
 </head>
 <body>
-<div id="header">
-    <div class="container">
-        <nav>
-            <img src="image/alpha.png" class="logo">
-            <ul>
-                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">about</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="galery.html">galery</a></li>
-            </ul>
-        </nav>
-        <div class="header-text">
-            <h1>Hi again,<span>Bellow</span> <br>Is Random image </h1>
-        </div>
-    </div>
-</div>
-<!---about-->
-<div id="gallery">
-    <div class="container">
-        <div class="row">
-            <div class="gallery-item">
-                <img src="image/OIP (1).jpeg" alt="OIP (1)">
-            </div>
-            <div class="gallery-item">
-                <img src="image/OIP (23).jpeg" alt="OIP (23)">
-            </div>
-            <div class="gallery-item">
-                <img src="image/OIP.jpeg" alt="OIP">
-            </div>
-            <div class="gallery-item">
-                <img src="image/sad-anime-pfp-4.jpg" alt="sad-anime-pfp-4">
-            </div>
-            <div class="gallery-item">
-                <img src="image/thumb-1920-423137.jpg" alt="thumb-1920-423137">
-            </div>
-            <div class="gallery-item">
-                <img src="image/beryl.jpg" alt="beryl">
-            </div>
-            <div class="gallery-item">
-                <img src="image/download (1).jpeg" alt="download (1)">
-            </div>
-            <div class="gallery-item">
-                <img src="image/download (2).jpeg" alt="download (2)">
-            </div>
-            <div class="gallery-item">
-                <img src="image/download.jpeg" alt="download">
-            </div>
-            <div class="gallery-item">
-                <img src="image/alpha.png" alt="alpha">
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="image/alpha.png" class="logo">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <h1>Hi again,<span>Bellow</span> <br>Is Random image </h1>
             </div>
         </div>
     </div>
-</div>
-    <div id="video-section">
-    <div class="container">
-        <div class="row">
-            <div class="video-container">
-                <video controls>
-                    <source src="video/Rough Days.mp4" type="video/mp4">
-                </video>
+    <!-- Gallery Section -->
+    <div id="gallery">
+        <div class="container">
+            <div class="row">
+                <div class="gallery-item">
+                    <a href="image/OIP (1).jpeg" data-baguettebox="gallery"><img src="image/OIP (1).jpeg" alt="OIP (1)"></a>
+                </div>
+                <div class="gallery-item">
+                    <a href="image/OIP (23).jpeg" data-baguettebox="gallery"><img src="image/OIP (23).jpeg" alt="OIP (23)"></a>
+                </div>
+                <div class="gallery-item">
+                    <a href="image/OIP.jpeg" data-baguettebox="gallery"><img src="image/OIP.jpeg" alt="OIP"></a>
+                </div>
+                <div class="gallery-item">
+                    <a href="image/sad-anime-pfp-4.jpg" data-baguettebox="gallery"><img src="image/sad-anime-pfp-4.jpg" alt="sad-anime-pfp-4"></a>
+                </div>
+                <div class="gallery-item">
+                    <a href="image/thumb-1920-423137.jpg" data-baguettebox="gallery"><img src="image/thumb-1920-423137.jpg" alt="thumb-1920-423137"></a>
+                </div>
+                <div class="gallery-item">
+                    <a href="image/beryl.jpg" data-baguettebox="gallery"><img src="image/beryl.jpg" alt="beryl"></a>
+                </div>
+                <div class="gallery-item">
+                    <a href="image/download (1).jpeg" data-baguettebox="gallery"><img src="image/download (1).jpeg" alt="download (1)"></a>
+                </div>
+                <div class="gallery-item">
+                    <a href="image/download (2).jpeg" data-baguettebox="gallery"><img src="image/download (2).jpeg" alt="download (2)"></a>
+                </div>
+                <div class="gallery-item">
+                    <a href="image/download.jpeg" data-baguettebox="gallery"><img src="image/download.jpeg" alt="download"></a>
+                </div>
+                <div class="gallery-item">
+                    <a href="image/alpha.png" data-baguettebox="gallery"><img src="image/alpha.png" alt="alpha"></a>
+                </div>
             </div>
         </div>
     </div>
-         <div id="video-section">
-    <div class="container">
-        <div class="row">
-            <div class="video-container">
-                <video controls>
-                    <source src="video/The 1975 - About You.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-
-    </div>
-</div>
-    <script src="https://unpkg.com/scrollreveal"></script>
-<script src="smooth-reveal.js"></script>
-<audio autoplay loop id="audio-background">
-            <source src="video/Rough Days.mp4" type="audio/mp4">
-
+    <script src="path/to/baguetteBox.min.js" async></script>
+    <script>
+        baguetteBox.run('.gallery-item');
+    </script>
 </body>
 </html>
