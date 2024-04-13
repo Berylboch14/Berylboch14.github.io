@@ -5,6 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add your CSS styles for the gallery here */
+        .gallery-item {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 5px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <div id="header">
@@ -16,7 +80,7 @@
                 <li><a href="about.html">about</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="galery.html">galery</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
             </ul>
         </nav>
         <div class="header-text">
@@ -24,66 +88,60 @@
         </div>
     </div>
 </div>
-<!---about-->
-<div id="gallery">
-    <div class="container">
-        <div class="row">
-            <div class="gallery-item">
-                <img src="image/OIP (1).jpeg" alt="OIP (1)">
-            </div>
-            <div class="gallery-item">
-                <img src="image/OIP (23).jpeg" alt="OIP (23)">
-            </div>
-            <div class="gallery-item">
-                <img src="image/OIP.jpeg" alt="OIP">
-            </div>
-            <div class="gallery-item">
-                <img src="image/sad-anime-pfp-4.jpg" alt="sad-anime-pfp-4">
-            </div>
-            <div class="gallery-item">
-                <img src="image/thumb-1920-423137.jpg" alt="thumb-1920-423137">
-            </div>
-            <div class="gallery-item">
-                <img src="image/beryl.jpg" alt="beryl">
-            </div>
-            <div class="gallery-item">
-                <img src="image/download (1).jpeg" alt="download (1)">
-            </div>
-            <div class="gallery-item">
-                <img src="image/download (2).jpeg" alt="download (2)">
-            </div>
-            <div class="gallery-item">
-                <img src="image/download.jpeg" alt="download">
-            </div>
-            <div class="gallery-item">
-                <img src="image/alpha.png" alt="alpha">
-            </div>
-        </div>
-    </div>
-</div>
-    <div id="video-section">
-    <div class="container">
-        <div class="row">
-            <div class="video-container">
-                <video controls>
-                    <source src="video/Rough Days.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-         <div id="video-section">
-    <div class="container">
-        <div class="row">
-            <div class="video-container">
-                <video controls>
-                    <source src="video/The 1975 - About You.mp4" type="video/mp4">
-                </video>
-            </div>
-        </div>
-    </div>
 
+<div id="gallery" class="container">
+    <div class="row">
+        <div class="gallery-item" onclick="openModal('image/OIP (1).jpeg')">
+            <img src="image/OIP (1).jpeg" alt="OIP (1)">
+        </div>
+        <div class="gallery-item" onclick="openModal('image/OIP (23).jpeg')">
+            <img src="image/OIP (23).jpeg" alt="OIP (23)">
+        </div>
+        <div class="gallery-item" onclick="openModal('image/OIP.jpeg')">
+            <img src="image/OIP.jpeg" alt="OIP">
+        </div>
+        <div class="gallery-item" onclick="openModal('image/sad-anime-pfp-4.jpg')">
+            <img src="image/sad-anime-pfp-4.jpg" alt="sad-anime-pfp-4">
+        </div>
+        <div class="gallery-item" onclick="openModal('image/thumb-1920-423137.jpg')">
+            <img src="image/thumb-1920-423137.jpg" alt="thumb-1920-423137">
+        </div>
+        <div class="gallery-item" onclick="openModal('image/beryl.jpg')">
+            <img src="image/beryl.jpg" alt="beryl">
+        </div>
+        <div class="gallery-item" onclick="openModal('image/download (1).jpeg')">
+            <img src="image/download (1).jpeg" alt="download (1)">
+        </div>
+        <div class="gallery-item" onclick="openModal('image/download (2).jpeg')">
+            <img src="image/download (2).jpeg" alt="download (2)">
+        </div>
+        <div class="gallery-item" onclick="openModal('image/download.jpeg')">
+            <img src="image/download.jpeg" alt="download">
+        </div>
+        <div class="gallery-item" onclick="openModal('image/alpha.png')">
+            <img src="image/alpha.png" alt="alpha">
+        </div>
     </div>
 </div>
+
+<div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+    function openModal(imageUrl) {
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("modalImg");
+        modal.style.display = "block";
+        modalImg.src = imageUrl;
+    }
+
+    function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+    }
+</script>
     <script src="https://unpkg.com/scrollreveal"></script>
 <script src="smooth-reveal.js"></script>
 <audio autoplay loop id="audio-background">
