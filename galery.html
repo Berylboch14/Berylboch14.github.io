@@ -5,6 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .gallery-item {
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: 5px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <div id="header">
@@ -16,7 +79,7 @@
                 <li><a href="about.html">about</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="blog.html">Blog</a></li>
-                <li><a href="galery.html">Gallery</a></li>
+                <li><a href="galery.html">Galery</a></li>
             </ul>
         </nav>
         <div class="header-text">
@@ -59,7 +122,7 @@
         </div>
     </div>
 </div>
-    <div id="video-section">
+       <div id="video-section">
     <div class="container">
         <div class="row">
             <div class="video-container">
@@ -69,9 +132,7 @@
             </div>
         </div>
     </div>
-</div>
-
-<div id="video-section">
+         <div id="video-section">
     <div class="container">
         <div class="row">
             <div class="video-container">
@@ -81,7 +142,6 @@
             </div>
         </div>
     </div>
-</div>
 
 
 <div id="myModal" class="modal">
@@ -90,28 +150,11 @@
 </div>
 
 <script>
-    function openModal(imageUrl, videoUrl) {
+    function openModal(imageUrl) {
         var modal = document.getElementById("myModal");
-        var modalContent = document.getElementById("modalContent");
+        var modalImg = document.getElementById("modalImg");
         modal.style.display = "block";
-        
-        modalContent.innerHTML = "";
-
-        if (imageUrl) {
-            var img = document.createElement("img");
-            img.src = imageUrl;
-            modalContent.appendChild(img);
-        }
-
-        if (videoUrl) {
-            var video = document.createElement("video");
-            video.controls = true;
-            var source = document.createElement("source");
-            source.src = videoUrl;
-            source.type = "video/mp4";
-            video.appendChild(source);
-            modalContent.appendChild(video);
-        }
+        modalImg.src = imageUrl;
     }
 
     function closeModal() {
@@ -119,10 +162,6 @@
         modal.style.display = "none";
     }
 </script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-<script src="smooth-reveal.js"></script>
-<audio autoplay loop id="audio-background">
-            <source src="video/Rough Days.mp4" type="audio/mp4">
 
 </body>
 </html>
