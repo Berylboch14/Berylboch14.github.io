@@ -31,7 +31,15 @@
 <script src="smooth-reveal.js"></script>
 <audio autoplay loop id="audio-background">
             <source src="video/Rough Days.mp4" type="audio/mp4">
- 
+ <script src="ajax.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var contentDiv = document.getElementById("content");
+            loadPage("about.html", function(response) {
+                contentDiv.innerHTML = response;
+            });
+        });
+    </script> 
 </body>
 </html>
     
